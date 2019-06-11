@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="offset-3 col-md-4">
+        <form [formGroup]="profileForm" (submit)="onSubmit()">
+              <div class="from-group">
+                <label for="userName">User Name : </label>
+                <input name="userName" formControlName="userName" type="text" class="form-control">
+                <div class="alert alert-danger" *ngIf="username.touched && username.invalid">User Name is required</div>
+            </div>
+            <div class="from-group">
+              <label for="password">Password : </label>
+              <input name="password" formControlName="password" type="password" class="form-control">
+              <div class="alert alert-danger" *ngIf="password.touched && password.invalid">Password is required</div>
+            </div>
+
+              <button class="btn btn-primary">submit</button>
+              <p class="alert alert-danger" *ngIf="err">{{err}}</p>
+          </form>
+    </div> 
+</div>
+<router-outlet></router-outlet>
